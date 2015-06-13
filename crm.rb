@@ -3,11 +3,8 @@ require_relative('contact.rb')
 
 class CRM
   def initialize(name)
-    @name = name.capitalize
-    puts "This CRM is called #{@name}"
-
-    @r = Rolodoex.new
-  end
+    @name = name
+end
 
   def print_main_menu
     puts "[1] Add a new contact"
@@ -52,16 +49,21 @@ class CRM
     puts "--------------\nContact has been added."
   end
 
+  def display
+    display_contacts
+  end
+
   def show_contacts
-   @contacts
+   all_contacts
+  end
+
+  def self.run(name)
+    crm = CRM.new(name)
+    crm.print_main_menu
   end
 end
 
-friends = CRM.new("friends")
-# friends.choose_option
-
-
-
+CRM.run("my crm")
 
 
 
