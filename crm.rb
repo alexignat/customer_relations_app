@@ -4,7 +4,8 @@ require_relative('contact.rb')
 class CRM
   def initialize(name)
     @name = name
-end
+    @rolodex = Rolodex.new
+  end
 
   def print_main_menu
     puts "[1] Add a new contact"
@@ -49,17 +50,13 @@ end
     puts "--------------\nContact has been added."
   end
 
-  def display
-    display_contacts
-  end
-
   def show_contacts
    all_contacts
   end
 
   def self.run(name)
     crm = CRM.new(name)
-    crm.print_main_menu
+    crm.choose_option
   end
 end
 

@@ -11,10 +11,15 @@ class Rolodex
     contacts << contact
   end
 
-  def all_contacts
-    @contacts
+  def display_contact
+    puts "First name: #{first_name}"
+    puts "Last name: #{last_name}"
+    puts "Email: #{email}"
+    puts "Note: #{note}"
   end
 end
+
+
 
 
 
