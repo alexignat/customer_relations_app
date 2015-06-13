@@ -13,5 +13,3 @@ class Contact
   end
 end
 
-first_contact = Contact.new("alex", "ignat", "a@ignat.com", "is awesome")
-first_contact.to_s

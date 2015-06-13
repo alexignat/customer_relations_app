@@ -34,4 +34,19 @@ class CRM
     display_attribute if execute_command == 5
     exit_menu if execute_command == 6
   end
+
+  def add_contact
+    print "Enter First Name: "
+    first_name = gets.chomp.capitalize
+    print "Enter Last Name: "
+    last_name = gets.chomp.capitalize
+    print "Enter Email Address: "
+    email = gets.chomp
+    print "Enter a Note: "
+    note = gets.chomp
+    contact = Contact.new(first_name, last_name, email, note)
+  end
 end
+
+friends = CRM.new("friends")
+friends.main_menu
