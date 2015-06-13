@@ -1,31 +1,69 @@
-def print_main_menu
-  puts "[1] Add a new contact"
-  puts "[2] Edit an existing contact"
-  puts "[3] Delete a contact"
-  puts "[4] Display all the contacts"
-  puts "[5] Display an attribute"
-  puts "[6] Exit"
-end
+require_relative('rolodex.rb')
+require_relative('contact.rb')
 
-def choose_option
-  print "Enter a command: "
-  choice = gets.chomp.to_i
+class CRM
+  def initialize(name)
+    @name = name.capitalize
+    puts "This CRM is called #{@name}"
 
-  case choice
-    when 1 then add_contact
-    when 2 then edit_contact
-    when 3 then delete_contact
-    when 4 then display_contacts
-    when 5 then display_attribute
-    when 6 then exit
-    else
-      puts "I can't do that"
+    @r = Rolodoex.new
+  end
+
+  def print_main_menu
+    puts "[1] Add a new contact"
+    puts "[2] Edit an existing contact"
+    puts "[3] Delete a contact"
+    puts "[4] Display all the contacts"
+    puts "[5] Display an attribute"
+    puts "[6] Exit"
+  end
+
+  def choose_option
+    print_main_menu
+
+    print "Enter a command: "
+    choice = gets.chomp.to_i
+
+    case choice
+      when 1 then add_contact
+      when 2 then edit_contact
+      when 3 then delete_contact
+      when 4 then display_contacts
+      when 5 then display_attribute
+      when 6 then exit
+      else
+        puts "I can't do that"
+    end
+  end
+
+  def add_contact
+    print "Enter a first name: "
+    first_name = gets.chomp.capitalize
+
+    print "Enter a last name: "
+    last_name = gets.chomp.capitalize
+
+    print "Enter an email address: "
+    email = gets.chomp
+
+    print "Enter note: "
+    notes = gets.chomp
+
+    puts "--------------\nContact has been added."
+  end
+
+  def show_contacts
+   @contacts
   end
 end
 
+friends = CRM.new("friends")
+# friends.choose_option
 
-print print_main_menu
-puts choose_option
+
+
+
+
 
 
 
