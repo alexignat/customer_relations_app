@@ -31,10 +31,9 @@ class Rolodex
   end
 
   def find_contact(id)
-   contact_index = @contacts.index do |contact|
+    @contacts.find do |contact|
       contact.id == id    #.id refers to the actual id of the contact defined in contact.rb
     end
-    @contacts[contact_index]
   end
 
   def edit_contact
@@ -55,8 +54,7 @@ class Rolodex
     contact.note = gets.chomp
 
     display_all_contacts
-
-  end
+ end
 end
 
 
