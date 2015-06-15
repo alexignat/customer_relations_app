@@ -22,9 +22,12 @@ class Rolodex
 
   def delete_contact
     puts "Enter the id of the contact you would like to delete:"
-    contact_to_be_deleted = gets.chomp.to_i
-
-    contacts.delete(contact_to_be_deleted)
+    id = gets.chomp.to_i
+    @contacts.each do |contact|
+      if contact.id == id
+        @contacts.delete(contact)
+      end
+    end
   end
 
 end
