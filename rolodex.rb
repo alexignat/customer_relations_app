@@ -30,6 +30,33 @@ class Rolodex
     end
   end
 
+  def find_contact(id)
+   contact_index = @contacts.index do |contact|
+      contact.id == id    #.id refers to the actual id of the contact defined in contact.rb
+    end
+    @contacts[contact_index]
+  end
+
+  def edit_contact
+    puts "Enter the id of the contact you would like to edit:"
+    id = gets.chomp.to_i
+    contact = find_contact(id)
+
+    puts "Enter new first name: "
+    contact.first_name = gets.chomp
+
+    puts "Enter new last name: "
+    contact.last_name = gets.chomp
+
+    puts "Enter the new email: "
+    contact.email = gets.chomp
+
+    puts "Enter the new note: "
+    contact.note = gets.chomp
+
+    display_all_contacts
+
+  end
 end
 
 

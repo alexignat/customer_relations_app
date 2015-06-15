@@ -72,6 +72,12 @@ class CRM
 
     choose_option
   end
+
+  def edit_contact
+    @rolodex.edit_contact
+
+    choose_option
+  end
 end
 
 CRM.run("my crm")
