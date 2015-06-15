@@ -1,5 +1,5 @@
-require_relative('rolodex.rb')
-require_relative('contact.rb')
+require_relative "rolodex.rb"
+require_relative "contact.rb"
 
 class CRM
   def initialize(name)
@@ -47,17 +47,26 @@ class CRM
     print "Enter note: "
     notes = gets.chomp
 
-    puts "--------------\nContact has been added."
-  end
+    @rolodex.add_contact(first_name, last_name, email, notes)
 
-  def show_contacts
-   all_contacts
+    puts "--------------\nContact has been added."
+
+    choose_option
+
   end
 
   def self.run(name)
     crm = CRM.new(name)
     crm.choose_option
   end
+
+  def display_contacts
+    @rolodex.display_all_contacts
+
+    choose_option
+  end
+
+
 end
 
 CRM.run("my crm")
