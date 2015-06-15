@@ -57,6 +57,7 @@ class CRM
 
   def self.run(name)
     crm = CRM.new(name)
+
     crm.choose_option
   end
 
@@ -66,7 +67,11 @@ class CRM
     choose_option
   end
 
+  def delete_contact
+    @rolodex.delete_contact
 
+    choose_option
+  end
 end
 
 CRM.run("my crm")

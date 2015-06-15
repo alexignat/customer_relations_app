@@ -20,6 +20,13 @@ class Rolodex
     end
   end
 
+  def delete_contact
+    puts "Enter the id of the contact you would like to delete:"
+    contact_to_be_deleted = gets.chomp.to_i
+
+    contacts.delete(contact_to_be_deleted)
+  end
+
 end
 
 
