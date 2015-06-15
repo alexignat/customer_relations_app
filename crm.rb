@@ -78,6 +78,12 @@ class CRM
 
     choose_option
   end
+
+  def display_attribute
+    @rolodex.display_attribute
+
+    choose_option
+  end
 end
 
 CRM.run("my crm")

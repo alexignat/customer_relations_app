@@ -22,5 +22,3 @@ class Contact
   end
 end
 
-# first_contact = Contact.new("alex", "ignat", "alex@ignat.com", "is awesome")
-# first_contact.display_contact

@@ -55,6 +55,29 @@ class Rolodex
 
     display_all_contacts
  end
+
+ def display_attribute
+  puts "Enter the id of the contact you would like to inspect:"
+  id = gets.chomp.to_i
+  contact = find_contact(id)
+
+  puts "[1] To show first name"
+  puts "[2] To show last name"
+  puts "[3] To show email"
+  puts "[4] To show notes"
+
+  option = gets.chomp.to_i
+
+  if option == 1
+    puts contact.first_name
+  elsif option == 2
+    puts contact.last_name
+  elsif option == 3
+    puts contact.email
+  elsif option == 4
+    puts contact.notes
+  end
+ end
 end
 
 
